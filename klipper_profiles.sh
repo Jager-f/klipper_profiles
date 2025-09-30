@@ -7,7 +7,7 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 TMP_BACKUP="/tmp/klipper_config_backup_${TIMESTAMP}.tar.gz"
 FINAL_BACKUP="$CONFIG_DIR/klipper_config_backup_${TIMESTAMP}.tar.gz"
 
-echo "=== Старт установки профилей Klipper ==="
+echo "=== Старт установки профилей Klipper ===" 
 
 # --- Проверка на повторный запуск ---
 PROFILE_DIRS_EXIST=false
