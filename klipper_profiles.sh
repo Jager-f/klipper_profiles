@@ -37,7 +37,7 @@ if [ -z "$CONFIG_DIR" ]; then
     echo "  - Конфигурация находится в нестандартном пути"
     echo "  - Скрипт запущен с правами root"
     echo ""
-    read -p "Введите полный путь к папке config: " USER_CONFIG_DIR
+    read -p "Введите полный путь к папке config: " USER_CONFIG_DIR </dev/tty
 
     if [ -d "$USER_CONFIG_DIR" ]; then
         CONFIG_DIR="$USER_CONFIG_DIR"
@@ -307,7 +307,7 @@ activate_profile() {
     
     # Копируем файлы с контролем ошибок
     if ! rsync -a --delete "${rsync_excludes[@]}" "$profile_dir/" "$CONFIG_DIR/"; then
-        echo "❌ Ошибка при активации профиля: rsync завершился с ошибкой"
+        echo "❌ Ошибка при активации профили: rsync завершился с ошибкой"
         exit 1
     fi
     
@@ -348,7 +348,7 @@ activate_profile() {
 delete_all_profiles() {
     echo "⚠️  ВНИМАНИЕ: Все профили будут удалены!"
     echo "Это действие НЕЛЬЗЯ отменить. Все данные в профилях будут потеряны."
-    read -p "Для подтверждения введите 'DELETE': " confirmation
+    read -p "Для подтверждения введите 'DELETE': " confirmation </dev/tty
     if [ "$confirmation" = "DELETE" ]; then
         local existing_profiles=($(get_existing_profiles))
         for profile in "${existing_profiles[@]}"; do
@@ -409,13 +409,13 @@ delete_single_profile() {
         echo "$((i+1)). ${existing_profiles[$i]}"
     done
     
-    read -p "Выберите номер профиля для удаления (1-${#existing_profiles[@]}): " choice
+    read -p "Выберите номер профиля для удаления (1-${#existing_profiles[@]}): " choice </dev/tty
     
     if [[ $choice =~ ^[0-9]+$ ]] && [ $choice -ge 1 ] && [ $choice -le ${#existing_profiles[@]} ]; then
         local profile_to_delete="${existing_profiles[$((choice-1))]}"
         echo "⚠️  ВНИМАНИЕ: Профиль $profile_to_delete будет удален!"
         echo "Это действие НЕЛЬЗЯ отменить."
-        read -p "Для подтверждения введите 'DELETE': " confirmation
+        read -p "Для подтверждения введите 'DELETE': " confirmation </dev/tty
         if [ "$confirmation" = "DELETE" ]; then
             if ! rm -rf "$CONFIG_DIR/$profile_to_delete"; then
                 echo "❌ Ошибка при удалении профиля: $profile_to_delete"
@@ -462,7 +462,7 @@ if [ ${#existing_profiles[@]} -eq 0 ]; then
     echo "Обнаружен первый запуск. Создание профилей..."
     
     while true; do
-        read -p "Сколько профилей создать? (1-5): " num_profiles
+        read -p "Сколько профилей создать? (1-5): " num_profiles </dev/tty
         if [[ $num_profiles =~ ^[1-5]$ ]]; then
             break
         else
@@ -521,7 +521,7 @@ else
     echo "5. Выйти"
     
     while true; do
-        read -p "Выберите действие (1-5): " action
+        read -p "Выберите действие (1-5): " action </dev/tty
         case $action in
             1)
                 # Добавить профиль
