@@ -1,10 +1,10 @@
 # 🖨️ Klipper Multi-Profile Manager
 
+>⚠️ **Important!** All code is provided “as is.” The author is not responsible for any possible damage caused by using these profiles.  
+You must understand what you are doing. Before starting a print, make sure to check all your printer’s settings!
+
 This script creates additional profiles and automates their switching for [Klipper](https://www.klipper3d.org/) — a popular firmware stack for 3D printers.  
 With it, you can easily switch between **five independent printer profiles** (each with its own settings) directly from the web interface (Fluidd, Mainsail, etc.).
-
-⚠️ **Important!** All code is provided “as is.” The author is not responsible for any possible damage caused by using these profiles.  
-Before starting a print, make sure to check all your printer’s settings!  
 
 ---
 
