@@ -70,7 +70,7 @@
 ## 🔄 Как использовать
 
 После установки вы сможете переключать профили через консоль принтера:
-  - `Profile_1`, `Profile_2`, `Profile_3, `Profile_4`, `Profile_5`
+   - `Profile_1`, `Profile_2`, `Profile_3`, `Profile_4`, `Profile_5`
 
 или выбором макросов
   - `SWITCH_PROFILE_1`, `SWITCH_PROFILE_2`, `SWITCH_PROFILE_3`, `SWITCH_PROFILE_4`, `SWITCH_PROFILE_5`
