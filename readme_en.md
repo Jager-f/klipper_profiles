@@ -60,8 +60,9 @@ Before starting a print, make sure to check all your printer’s settings!
 1. Connect to the printer via SSH  
 2. Install G-Code Shell Commands (using [KIAHU](https://github.com/dw-0/kiauh))  
 3. Run the script with:  
-   ```wget -qO- https://raw.githubusercontent.com/Jager-f/klipper_profiles/main/klipper_profiles.sh | bash```
-   
+```javascript copy
+   wget -qO- https://raw.githubusercontent.com/Jager-f/klipper_profiles/main/klipper_profiles.sh | bash
+```
 4. After installation, Klipper will automatically reboot with profile 1 loaded
 
 ## **🔄 How to use**
